@@ -46,41 +46,41 @@ GB and GBC regular cartridges are all compatible with the device. Flash cartridg
 
 Overall, the console is perfect for kids and to avoid ruining collectible artifacts when playing outside with a Game Boy Camera (if you can read the screen under the sun).
 
-The console comes with a 188-in-one internal rom, labelled GBCK003. It contains in real only 66 different games with repeated entries in the menu. All games are arcade classics of the early Game Boy library, mostly MBC1 and games without mapper (plus there is at least one MBC2 and one MBC5 game), mostly Japanese versions. Two games have save features but they are just broken. 
+The console comes with a 188-in-one internal ROM, labelled GBCK003. It contains in real only 66 different games with repeated entries in the menu. All games are arcade classics of the early Game Boy library, mostly MBC1 and games without mapper (plus there is at least one MBC2 and one MBC5 game), mostly Japanese versions. Two games have save features but they are just broken. 
 
-The rom sub-PCB is directly soldered to the motherboard (PCB against PCB) and is quite difficult to remove. The GB Boy and the GB Boy Colour seems to share the exact same internal rom. The internal rom is activated only when no cartridge is inserted thanks to a small mechanical switch. In case a cartridge is inserted, it pulls high the A15 and CS lines of the rom board, deactivating it.
+The ROM sub-PCB is directly soldered to the motherboard (PCB against PCB) and is quite difficult to remove. The GB Boy and the GB Boy Colour seem to share the exact same internal ROM. The internal ROM is activated only when no cartridge is inserted thanks to a small mechanical switch. In case a cartridge is inserted, it pulls high the A15 and CS lines of the ROM board, deactivating it.
 
-## The main board showing the switch circuit for activating/deactivating the internal rom
+## The main board showing the switch circuit for activating/deactivating the internal ROM
 ![the GB Boy Colour Board](Pictures/Board.png)
 
-The switch to detect the cartridge and the internal rom sub-PCB are desoldered on these pictures.
+The switch to detect the cartridge and the internal ROM sub-PCB are desoldered on these pictures.
 
-The front board with the internal rom desoldered is rather empty and lot of room is left behind the display. That would be the perfect place to cram a Game Boy Printer emulator if the 5V was more robust. The display itself is also quite difficult to remove due to very tight tolerance on the ribbon. I did not find the reference despite markings on the ribbon. Next image shows the wiring diagram of the internal rom to the cartridge slot made with a multimeter. The Audio in and Clock pin of Game Boy are of course not connected, reducing the number of pins from 32 to 30.
+The front board with the internal ROM desoldered is rather empty and lot of room is left behind the display. That would be the perfect place to cram a Game Boy Printer emulator if the 5V was more robust. The display itself is also quite difficult to remove due to very tight tolerance on the ribbon. I did not find the reference despite markings on the ribbon. Next image shows the wiring diagram of the internal ROM to the cartridge slot made with a multimeter. The Audio in and Clock pin of Game Boy are of course not connected, reducing the number of pins from 32 to 30.
 
-## Wiring between the 30 pins internal rom and the 32 pins GB compatible cartridge slot.
+## Wiring between the 30 pins internal ROM and the 32 pins GB compatible cartridge slot.
 ![the GB Boy Colour pinout](Pictures/Pinout.png)
 
 Side note, the flash chip (29LV640) is rated for 3.3V only and is directly wired to the +5V of the GB Boy Colour. It ran on my side for dozens of hours, but how many more will it survive ? Mystery...
 
-## Detail of the internal rom pinout (flash chip is a 8MB [MX29LV640ETTI-70G](Documentation/MX29LV640E.PDF))
+## Detail of the internal ROM pinout (flash chip is a 8MB [MX29LV640ETTI-70G](Documentation/MX29LV640E.PDF))
 ![the GB Boy Colour pinout](Pictures/Pinout_2.png)
 
-At this point, it is quite "easy" to directly wire the desoldered internal rom to any spare Game Boy cartridge PCB (CS and A15 included). I used a Divastarz PCB for the job, it [died without suffering](https://github.com/Raphael-Boichot/Game-Boy-chips-decapping-project#game-boy-mbc5-mappers) when giving its MBC to Science in a prior project. Wiring all that shit manually pin by pin was a painfull task but at least it works !
+At this point, it is quite "easy" to directly wire the desoldered internal ROM to any spare Game Boy cartridge PCB (CS and A15 included). I used a Divastarz PCB for the job, it [died without suffering](https://github.com/Raphael-Boichot/Game-Boy-chips-decapping-project#game-boy-mbc5-mappers) when giving its MBC to Science in a prior project. Wiring all that shit manually pin by pin was a painfull task but at least it works !
 
 ## Playing the 188 in 1 cartridge on legit Game Boy Color
 ![the GB Boy Colour pinout](Pictures/Trust_in_pinout.png)
 
-## Whole rom analysis (total: 256 banks available)
+## Whole ROM analysis (total: 256 banks available)
 
-The rom is quite badly made so the checksum is incorrect (range 0x00014E-0x00014F) and the chip size flag is bad too (offset 0x000148 reports 0x06 for 2MB while it should be 0x08 for 8MB) in the header. The rom indicates that it is driven by a MBC5 compatible mapper which is plausible. Anyway, the dump can be made with FlashGBX and a GBXCart entering the following parameters (do not mind the checksum error, the dump will be good): 
+The ROM is quite badly made so the checksum is incorrect (range 0x00014E-0x00014F) and the chip size flag is bad too (offset 0x000148 reports 0x06 for 2MB while it should be 0x08 for 8MB) in the header. The ROM indicates that it is driven by a MBC5 compatible mapper which is plausible. Anyway, the dump can be made with FlashGBX and a GBXCart entering the following parameters (do not mind the checksum error, the dump will be good): 
 
 ![FlashGBX parameters](Pictures/FlashGBX_parameters.png)
 
 Sadly, the current FlashGBX version does not allow to flash this chip back, only to read it (with a GBxCart 1.3 at least). This mapper/chip combination was not referenced in the FlashGBX database at the time I did the tests despite the chip was used by some previous bootlegs. I've tried many different tricks (like shorting some solder bridges left on the PCB) but it never worked. Maybe the flash chip is simply not meant to be reflashable by the side connectors but only with an external chip flasher and soldered after.
 
-Anyway, The global rom organisation is the following (by increasing offset or increasing banks of 32 kB):
+Anyway, The global ROM organisation is the following (by increasing offset or increasing banks of 32 kB):
 
-| Data (rom or junk):                  | Size in bytes:          |Starting offset:             |Starting bank:             |
+| Data (ROM or junk):                  | Size in bytes:          |Starting offset:             |Starting bank:             |
 |----------------------------|-------------------------|-----------------------------|-----------------------------|
 | HITEK_MULTI      | 0x400000 | 0x000000|0|
 | **Junk data**  | **0x3F8000** | **0x080001**|-|
@@ -152,24 +152,24 @@ Anyway, The global rom organisation is the following (by increasing offset or in
 | TENCHIWOKURAU    | 0x080000 | 0x700000|E0|
 | DONKEY KONG      | 0x080000 | 0x780000|F0|
 
-The first part of the 8MB rom is a giant 4MB partition with mainly junk data except on bank 0x00. The GB Boy boot rom itself (HITEK_MULTI) contains the "filesystem" and a library of tiles for dealing with the western and Chinese characters displayed on screen and is limited to the first 32 KB of data only. The "filesytem" itself is quite simple to grasp: from offset 0x004450 to 0x00450B it contains an array with the "188" starting bank numbers of the "188" targeted roms (starting at 0x000000 for bank 0x00, 0x008000 for bank 0x01, 0x010000 for bank 0x02, etc.).
+The first part of the 8MB ROM is a giant 4MB partition with mainly junk data except on bank 0x00. The GB Boy boot ROM itself (HITEK_MULTI) contains the "filesystem" and a library of tiles for dealing with the western and Chinese characters displayed on screen and is limited to the first 32 KB of data only. The "filesytem" itself is quite simple to grasp: from offset 0x004450 to 0x00450B it contains an array with the "188" starting bank numbers of the "188" targeted roms (starting at 0x000000 for bank 0x00, 0x008000 for bank 0x01, 0x010000 for bank 0x02, etc.).
 
-## Bank #00, the HITEK_MULTI boot rom
+## Bank #00, the HITEK_MULTI boot ROM
 
-- 0x000000 - 0x000150: Game Boy starting code (Game Boy logo, MBC type, rom size, checksum, etc.). The information section provided indicates a non-Japanese 2 MB unlicensed GBC exclusive game with MBC5 + 128 kB ram + battery with a bad checksum. This part is maybe a copy/paste from another game. However no documented game has this checksum...
+- 0x000000 - 0x000150: Game Boy starting code (Game Boy logo, MBC type, ROM size, checksum, etc.). The information section provided indicates a non-Japanese 2 MB unlicensed GBC exclusive game with MBC5 + 128 kB ram + battery with a bad checksum. This part is maybe a copy/paste from another game. However no documented game has this checksum...
 - 0x000151 - 0x004000: nothing but 0x00, codes jumps directly to 0x004001 (no idea why).
 - 0x004001 - 0x00444F: internal code.
 - 0x004450 - 0x00450B: array of starting banks for the "188" games.
 - 0x00450C - 0x004684: unknown data.
 - 0x004685 - 0x00492E: tileset for ASCII table, probably 1 bpp partial ASCII table compressed into 2 bpp tiles so it's very hard to visualize with a tile editor as 2 characters are overlapping in each tile. Only uppercase letters, numbers and some extra characters are possible (basically characters 0x20 to 0x5F of the ASCII table).
-- 0x00492F - 0x00582F: tilemap for ASCII table, which appears in [plain ASCII](Dump/HITEK_MULTI.txt) and of course in the same order as the starting bank array of the corresponding rom. Each game has a 20 characters (tiles) reserved space.
+- 0x00492F - 0x00582F: tilemap for ASCII table, which appears in [plain ASCII](Dump/HITEK_MULTI.txt) and of course in the same order as the starting bank array of the corresponding ROM. Each game has a 20 characters (tiles) reserved space.
 - 0x005830 - 0x006708: tilemap for Chinese characters corresponding to each game in the same order. Each game has a 20 characters reserved space too (not sure of the encoding as it occupies 2 lines so 40 tiles on screen, a character targeting 2 vertical tiles).
 - 0x006709 - 0x008000: tileset for Chinese characters, probably also 1 bpp compressed in 2 bpp tiles.
 
-## Array of starting banks for roms in the same order as the games in menu
+## Array of starting banks for ROMs in the same order as the games in menu
 ![starting banks](Pictures/Bank_array.png)
 
-The better (according to Chinese players taste) roms are intentionnaly placed on the first and second menu pages. Quite a decent selection I must admit.
+The better (according to Chinese players taste) ROMs are intentionally placed on the first and second menu pages. Quite a decent selection I must admit.
 
 ## Tilemap for menu text in plain ASCII
 ![text_tilemap](Pictures/Text_tilemap.png)
@@ -178,19 +178,19 @@ This tilemap can be opened directly in a text editor. It is not natively formatt
 
 ## From bank #01 to bank #7F, junk data
 
-Next (after bank 0) is probably data from another project that was stored on the flash chip at some point (chip may have been recycled and not fully erased when flashed). It contains SD and FAT system error codes, a list of Atari 2600 games and some chunks of their roms. From offset 0x0111D00 to 0x0400000 it then contains only 0xFF but I think this is still part of the junk data. Nothing salty at first glance. This probably easily explains why the checksum is bad as it must be calculated without all that crap. 
+Next (after bank 0) is probably data from another project that was stored on the flash chip at some point (chip may have been recycled and not fully erased when flashed). It contains SD and FAT system error codes, a list of Atari 2600 games and some chunks of their ROMs. From offset 0x0111D00 to 0x0400000 it then contains only 0xFF but I think this is still part of the junk data. Nothing salty at first glance. This probably easily explains why the checksum is bad as it must be calculated without all that crap. 
 
-## From bank #80 to bank #FF, the game roms
+## From bank #80 to bank #FF, the game ROMs
 
-Next 4 MB (second half) is occupied by 66 unique roms, without any particular sorting except for the last two. Roms are just aligned to offsets multiple of their own size which is mandatory for multigame systems knowing how the dedicated mappers deals with them (they basically redirect any in-game call to an address to the rom offset OR the address called). Strange thing: DAEDALIAN OPUS is supposed to be a 32 KB rom but its "slot" is in fact 393 KB long or 11 banks (the rom is followed by 0x00 until TENCHIWOKURAU). This is probably just a sloppy offset alignement trick for the next "big" games, DONKEY KONG (MBC1 + save ram) and TENCHIWOKURAU (MBC2). They both have save capabilities in theory, but as far as I can tell, they are just broken here. YARSREVENGE is in its MBC5 version here (GBC) but the rom is 64kB while it is supposed to be 1024 kB. Not sure why.
+Next 4 MB (second half) is occupied by 66 unique ROMs, without any particular sorting except for the last two. ROMs are just aligned to offsets multiple of their own size which is mandatory for multigame systems knowing how the dedicated mappers deal with them (they basically redirect any in-game call to an address to the ROM offset OR the address called). Strange thing: DAEDALIAN OPUS is supposed to be a 32 KB ROM but its "slot" is in fact 393 KB long or 11 banks (the ROM is followed by 0x00 until TENCHIWOKURAU). This is probably just a sloppy offset alignment trick for the next "big" games, DONKEY KONG (MBC1 + save ram) and TENCHIWOKURAU (MBC2). They both have save capabilities in theory, but as far as I can tell, they are just broken here. YARSREVENGE is in its MBC5 version here (GBC) but the ROM is 64kB while it is supposed to be 1024 kB. Not sure why.
 
-I do not know if banks #01 to #7F can be used for storing roms but there is clearly no reason that it shouldn't. The Game entries for 188 games can all be stuffed with different names (at least ASCII ones) and the array of starting banks too.
+I do not know if banks #01 to #7F can be used for storing ROMs but there is clearly no reason that it shouldn't. The Game entries for 188 games can all be stuffed with different names (at least ASCII ones) and the array of starting banks too.
 
 The mapper ([Decapped and imaged](Pictures/kong-feng_gbck003_mcmaster_mz_mit20x.jpg) by [John McMaster](https://twitter.com/johndmcmaster)) is maybe common with some other 1XX-in-one clone cartridges but I did not find any documented matching chip used in bootlegs for the moment. It's probably an Altera CPLD.
 
-I did not find any emulator that can boot this rom (even the trusty BGB, which supports many oddities), which means it's a bootleg thing not derived from known and documented stuff.
+I did not find any emulator that can boot this ROM (even the trusty BGB, which supports many oddities), which means it's a bootleg thing not derived from known and documented stuff.
 
-With all this knowledge in hand and a way of reflashing this PCB (probably by desoldering the flash chip or adding some wires between connector and chip), it is probably possible to make a working custom rom by tinkering this one without too much difficulty. I guess it would anyway be easier to solder back a [known-to-be-reflashable-and-customisable 108-in-1 cartridge](https://github.com/lesserkuma/256M_ROM_Builder) with some adapter PCB rather than trying to mess with that piece of crap. There is plenty of room below the LCD screen.
+With all this knowledge in hand and a way of reflashing this PCB (probably by desoldering the flash chip or adding some wires between connector and chip), it is probably possible to make a working custom ROM by tinkering this one without too much difficulty. I guess it would anyway be easier to solder back a [known-to-be-reflashable-and-customisable 108-in-1 cartridge](https://github.com/lesserkuma/256M_ROM_Builder) with some adapter PCB rather than trying to mess with that piece of crap. There is plenty of room below the LCD screen.
 
 ## The most unique and janky cartmod ever
 ![cleanest cartmod](Pictures/Clean_mod.jpg)
