@@ -70,7 +70,7 @@ At this point, it is quite "easy" to directly wire the desoldered internal ROM t
 ## Playing the 188 in 1 cartridge on legit Game Boy Color
 ![the GB Boy Colour pinout](Pictures/Trust_in_pinout.png)
 
-Don’t praise me for the welding work – I’m a professional.
+Don’t praise me for the soldering work kids, I’m a professional.
 
 ## Whole ROM analysis (total: 256 banks available)
 
