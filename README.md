@@ -82,8 +82,8 @@ Anyway, The global ROM organisation is the following (by increasing offset or in
 
 | Data (ROM or junk):                  | Size in bytes:          |Starting offset:             |Starting bank:             |
 |----------------------------|-------------------------|-----------------------------|-----------------------------|
-| HITEK_MULTI      | 0x400000 | 0x000000|0|
-| **Junk data**  | **0x3F8000** | **0x080001**|-|
+| HITEK_MULTI      | 0x008000 | 0x000000|0|
+| **Junk data**  | **0x3F8000** | **0x008000**|1|
 | SUPER MARIOLAND  | 0x010000 | 0x400000|80|
 | BUGS BUNNY       | 0x010000 | 0x410000|82|
 | PARASORU HEMBEI  | 0x010000 | 0x420000|84|
