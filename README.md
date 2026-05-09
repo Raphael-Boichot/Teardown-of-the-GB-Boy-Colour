@@ -150,7 +150,7 @@ Anyway, The global ROM organisation is the following (by increasing offset or in
 | TESSERAE         | 0x008000 | 0x690000|D2|
 | WORLD BOWLING    | 0x008000 | 0x698000|D3|
 | DAEDALIAN OPUS   | 0x008000 | 0x6A0000|D4|
-| **Unknown data**   | **0x058000** | **0x6A8001**|D5|
+| **0x00 padding**   | **0x058000** | **0x6A8001**|D5|
 | TENCHIWOKURAU    | 0x080000 | 0x700000|E0|
 | DONKEY KONG      | 0x080000 | 0x780000|F0|
 
