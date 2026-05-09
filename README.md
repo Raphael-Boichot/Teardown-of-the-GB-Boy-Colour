@@ -194,3 +194,5 @@ With all this knowledge in hand and a way of reflashing this PCB (probably by de
 
 ## The most unique and janky cartmod ever
 ![cleanest cartmod](Pictures/Clean_mod.jpg)
+
+The hole in shell comes from a previous tinkered flashable cartridge, it has nothing to do with the PCB used here.
