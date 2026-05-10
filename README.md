@@ -180,7 +180,7 @@ This tilemap can be opened directly in a text editor. It is not natively formatt
 
 ## From bank #01 to bank #7F, junk data
 
-Next (after bank 0) contains data that was stored on the flash chip during its preceding busy life. It contains SD and FAT system error codes, a list of Atari 2600 games and some chunks of their ROMs. From offset 0x0111D00 to 0x0400000 it then contains only padding with 0xFF. Nothing salty at first glance but content may vary from chip to chip I guess. This probably easily explains why the checksum is bad as it must be calculated without all that crap, if yet calculated.
+Next (after bank 0) contains data that was stored on the flash chip during its preceding busy life. Mine contains SD and FAT system error codes, a list of Atari 2600 games and some chunks of their ROMs. From offset 0x0111D00 to 0x0400000 it then contains only padding with 0xFF. Nothing salty at first glance but content may vary from chip to chip I guess. This probably easily explains why the checksum is bad as it must be calculated without all that crap, if yet calculated.
 
 ## From bank #80 to bank #FF, the game ROMs
 
