@@ -72,6 +72,10 @@ At this point, it is quite "easy" to directly wire the desoldered internal ROM t
 
 Don’t praise me for the soldering work kids, I’m a professional.
 
+![](/Pictures/Super_Game_Boy.jpg)
+
+Of course, it works too.
+
 ## Whole ROM analysis (total: 256 banks available)
 
 The ROM is quite badly made so the checksum is incorrect (range 0x00014E-0x00014F) and the chip size flag is bad too (offset 0x000148 reports 0x06 for 2MB while it should be 0x08 for 8MB) in the header. The ROM indicates that it is driven by a MBC5 compatible mapper which is plausible. Anyway, the dump can be made with FlashGBX and a GBXCart entering the following parameters (do not mind the checksum error, the dump will be good): 
