@@ -74,7 +74,7 @@ Don’t praise me for the soldering work kids, I’m a professional.
 
 ![](/Pictures/Super_Game_Boy.jpg)
 
-Of course, it works too.
+Of course, it works too (mostly, had to reboot sometimes to get the game after freezing from selection menu)
 
 ## Whole ROM analysis (total: 256 banks available)
 
