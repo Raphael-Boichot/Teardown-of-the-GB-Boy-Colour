@@ -1,6 +1,6 @@
 # Knowledge repository about the Kong Feng GB BOY COLOUR
 
-The GB Boy Colour is a Chinese Game Boy Color (GBC) clone from brand new parts made by the [Kong Feng Company](http://www.furrtek.org/?a=aliname) (KF). The model follows the [GB Boy](https://www.furrtek.org/?a=gbboy), a Game Boy clone. The GB Boy Colour is now apparently discontinued and replaced by a weird GBA form factor clone (that does not play GBA games). The (laughable) consequence is that the GB Boy Colour in the GBC form factor is now more expensive than a legit GBC in 2023. It's been retro faster than the retro. As usual with Chinese repro, there is no available story and the origin of the KF main processor is not documented (pure reverse engineering or just leak of the masks, who knows...).
+The GB Boy Colour is a Chinese Game Boy Color (GBC) clone from brand new parts made by the [Kong Feng Company](http://www.furrtek.org/?a=aliname) (KF). The model follows the [GB Boy](https://www.furrtek.org/?a=gbboy), a Game Boy clone. The GB Boy Colour is now apparently discontinued and replaced by a weird GBA form factor clone (that does not play GBA games). The (laughable) consequence is that the GB Boy Colour in the GBC form factor is now more expensive than a legit GBC in 2023. It's been retro faster than the retro. As usual with Chinese repro, there is no available story and the origin of the KF main processor is not documented (pure reverse engineering or just leak of the masks, who knows without decapping).
 
 Some batches sometimes reappear on Aliexpress but never with reliable sellers. It seems that two versions with noticeably different PCB / components were sold. I have the "full shitty electrolytic caps" version. Number of units produced is of course unknown but Chinese market is so humongous that it could easily be order of magnitude more than genuine GBC, knowing that the manufacturing time code for the main processor chip is... 2007.
 
@@ -22,7 +22,7 @@ START and SELECT buttons are both solid and responsive, not like the mushy butto
 
 ![](/Documentation/Flyer_GB_Boy_Colour_4.png)
 
-The GB Boy Colour user manual refers to accessories which are "labelled like" but not genuine Nintendo products (but similar like serial cables, adapters and headphones) so I guess these were available on the local Chinese market only. I never saw them on Aliexpress for example.
+The GB Boy Colour user manual refers to accessories which are "labelled like" but not genuine Nintendo products (but similar like serial cables, adapters and headphones) so I guess these were available on the local Chinese market only. KF GBC-004 is equivalent to Nintendo MGB-004 and KF GBC-005 is equivalent to Nintendo CGB-003.
 
 ## User feedback
 The GB Boy Colour features a quite deceptive LCD display in today's standard. It has a very pronounced blue hue, a quite dim backlight and a butchered and stretched upscaling. It is driven by an unbranded (and undocumented) video chip turning the legit signal from the main chip into a pixel mess fitting the display. Lover of pixel perfect, move on. Apart from that, the KF main processor is perfectly pinout compatible with a GBC ([it can be directly dropped on a GBC motherboard](https://www.reddit.com/r/Gameboy/comments/qhx2gs/i_swapped_the_cpus_of_a_gb_boy_colour_and_gameboy/)) and the GB Boy Colour itself is a 100% compatible GBC-like console. 
@@ -30,9 +30,9 @@ The GB Boy Colour features a quite deceptive LCD display in today's standard. It
 ## Modded GBC vs GB Boy Colour: note the butchered aspect ratio and the blue hue
 ![](/Pictures/GB_Boy_Colour_vs_GBC_front.jpg)
 
-The modded GBC used in comparison is equipped with a quite dim transflective LCD (must be an early AIO TFT Display from Aliexpress if I remind well). So the GB Boy Colour LCD display is dim and very blue shifted. The fact that it is not transflective itself make it barely readable outside despite the backlight. The wrong aspect ratio is very annoying as it is just a nearest pixel upscaling that creates a ton of aliasing. Such a fucked display with everything near perfect aside is a pity.
+The modded GBC used in comparison is equipped with a quite dim transflective LCD (must be an early AIO TFT Display from Aliexpress if I remind well). So the GB Boy Colour LCD display is dim and very blue shifted. The fact that it is not transflective itself make it barely readable outside despite the backlight. The wrong aspect ratio is very annoying as it is just a nearest pixel upscaling that creates a ton of aliasing. Such a fucked display with everything near perfect aside is a pity. Device overall aspect ratio let me think that the GB Boy Colour was designed around that very particular display.
 
-Device overall aspect ratio let me think that the GB Boy Colour was designed around that very particular display.
+Believe it or not, I did the two Oracles and Links Awakening during a long-term sick leave on the particular unit presented here. So it does the job anyway.
 
 ![](/Pictures/GB_Boy_Colour_vs_GBC_side.jpg)
 
