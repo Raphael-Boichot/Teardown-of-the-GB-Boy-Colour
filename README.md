@@ -194,7 +194,7 @@ I do not know if banks #01 to #7F can be used for storing ROMs but there is clea
 
 The mapper ([Decapped and imaged](Pictures/kong-feng_gbck003_mcmaster_mz_mit20x.jpg) by [John McMaster](https://twitter.com/johndmcmaster)) is maybe common with some other 1XX-in-one clone cartridges but I did not find any documented matching chip used in bootlegs for the moment. It's probably an Altera CPLD.
 
-I did not find any emulator that can boot this ROM (even the trusty BGB, which supports many oddities), which means it's a bootleg thing not derived from known and documented stuff.
+I did not find any emulator that can boot this ROM farther than the menu (even the trusty BGB, which supports many oddities), which means it's a bootleg thing not derived from known and documented stuff.
 
 With all this knowledge in hand and a way of reflashing this PCB (probably by desoldering the flash chip or adding some wires between connector and chip), it is probably possible to make a working custom ROM by tinkering this one without too much difficulty. I guess it would anyway be easier to solder back a [known-to-be-reflashable-and-customisable 108-in-1 cartridge](https://github.com/lesserkuma/256M_ROM_Builder) with some adapter PCB rather than trying to mess with that piece of crap. There is plenty of room below the LCD screen.
 
